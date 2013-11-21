@@ -5,7 +5,7 @@ define([
 ], function(Marionette, App, InitOptions){
     'use strict';
 
-    App.module("Left", function(Left, _){
+    App.module("Left", function(Left){
         Left.Room = Marionette.ItemView.extend({
             template: _.template("<a href=\"<%= action %>\"><%= text %></a>"),
             tagName: "li"

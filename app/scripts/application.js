@@ -1,23 +1,28 @@
 define([
     'backbone',
-    'communicator'
+    'events',
+    'views/login'
 ],
 
-function( Backbone, Communicator ) {
+function( Backbone, Events, Login ) {
     'use strict';
 
-    var App = new Backbone.Marionette.Application();
+    var Chat = new Backbone.Marionette.Application();
+
+    // Register Event Names
+    Chat.Events = Events;
 
     /* Add application regions here */
-    App.addRegions({
-        LeftRegion: "#left",
-        ChatRefion: "#chat"
+    Chat.addRegions({
+        MainRegion: "#main"
     });
 
     /* Add initializers here */
-    App.addInitializer( function () {
-	Communicator.mediator.trigger("APP:START");
+    Chat.addInitializer( function () {
+        Chat.View
     });
 
-    return App;
+
+
+    return Chat;
 });

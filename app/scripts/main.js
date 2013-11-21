@@ -1,10 +1,14 @@
-require([
-	'backbone',
-	'application',
-	'regionManager'
+define([
+    'backbone',
+    'application',
+    'controllers/loginController'
 ],
-function ( Backbone, App ) {
+function ( Backbone, Chat, LoginController ) {
     'use strict';
 
-	App.start();
+    Chat.vent.on(Chat.Events.Start, function(){
+        Chat.MainRegion.show(LoginController.LoginView());
+    });
+
+    Chat.start();
 });

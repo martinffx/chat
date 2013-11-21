@@ -7,6 +7,12 @@ require.config({
 
 
     shim: {
+        underscore:{
+            exports: '_'
+        },
+        jquery:{
+            exports: '$'
+        },
         backbone: {
             deps: [
                 'underscore',
