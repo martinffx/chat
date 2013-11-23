@@ -5,6 +5,9 @@ define([
     'use strict';
 
     return new Backbone.Marionette.ItemView.extend({
-        template: Template
+        template: Template,
+        onRender: function(){
+            this.$el.fadeIn('slow');
+        }
     });
 });
