@@ -23,7 +23,5 @@ function( Backbone, Events, LoginView, UserModel ) {
         Chat.MainRegion.show(new LoginView({ model: new UserModel({}) }));
     });
 
-
-
     return Chat;
 });
