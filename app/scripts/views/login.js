@@ -4,10 +4,20 @@ define([
 ], function( Backbone, Template ){
     'use strict';
 
-    return new Backbone.Marionette.ItemView.extend({
+    return Backbone.Marionette.ItemView.extend({
         template: Template,
         onRender: function(){
-            this.$el.fadeIn('slow');
+            this.$el.fadeIn(1000);
+        },
+        className: 'span6 offset3',
+
+        events: {
+            'click input#login': 'onLogin'
+        },
+
+        onLogin: function(evt){
+            alert('Login Click!');
+            return false;
         }
     });
 });

@@ -1,4 +1,17 @@
-<form action="{{ action }}" method="post">
-  <label for="username">Username:</label>
-  <input id="username" type="text"/>
-</form>
+  <form action="{{ action }}" method="post" class="form-horizontal">
+    <fieldset>
+      <legend>Who are you?</legend>
+      <div class="control-group">
+        <label class="control-label" for="username">Username:</label>
+        <div class="controls">
+          <input id="username" type="text" placeholder="username"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input id="login" type="submit" value="Enter" class="btn" />
+        </div>
+      </div>
+
+    </fieldset>
+  </form>

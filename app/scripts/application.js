@@ -1,11 +1,7 @@
 define([
     'backbone',
-    'events',
-    'views/login',
-    'models/user'
-],
-
-function( Backbone, Events, LoginView, UserModel ) {
+    'events'
+], function( Backbone, Events, LoginView, UserModel ) {
     'use strict';
 
     var Chat = new Backbone.Marionette.Application();
@@ -20,7 +16,7 @@ function( Backbone, Events, LoginView, UserModel ) {
 
     /* Add initializers here */
     Chat.addInitializer( function () {
-        Chat.MainRegion.show(new LoginView({ model: new UserModel({}) }));
+        Chat.vent.trigger(Chat.Events.Start);
     });
 
     return Chat;

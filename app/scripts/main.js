@@ -7,7 +7,8 @@ function ( Backbone, Chat, LoginController ) {
     'use strict';
 
     Chat.vent.on(Chat.Events.Start, function(){
-        Chat.MainRegion.show(LoginController.LoginView());
+        var view = LoginController.LoginView();
+        Chat.MainRegion.show(view);
     });
 
     Chat.start();
