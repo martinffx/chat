@@ -9,8 +9,10 @@ var hbs = require('express-hbs');
 var socketIO = require('socket.io');
 
 
-// init express
-var app = express();
+// init
+var app = express(),
+    server = http.createServer(app),
+    io = socketIO.listen(server);
 
 app.configure(function(){
     app.set('port', process.env.PORT || 3000);
@@ -36,9 +38,6 @@ app.get('/', function(req, res){
 });
 
 // start server
-http.createServer(app).listen(app.get('port'), function(){
+server.listen(app.get('port'), function(){
     console.log('Express App started!');
 });
-
-
-

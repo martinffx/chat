@@ -6,6 +6,7 @@ define([
 
     return Backbone.Marionette.ItemView.extend({
         template: Template,
+
         onRender: function(){
             this.$el.fadeIn(1000);
         },
@@ -16,8 +17,19 @@ define([
         },
 
         onLogin: function(evt){
+            var username = this.$el.find('input#username').val();
+            this.model.set('username', username, { validate: true });
+
             alert('Login Click!');
             return false;
+        },
+
+        onInvalid: function(){
+            alert('On Invalid User Model!');
+        },
+
+        onError: function(msg){
+            alert(msg);
         }
     });
 });

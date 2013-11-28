@@ -4,13 +4,13 @@ define([
     'application',
     'views/login',
     'models/user'
-], function(_, Backbone, Chat, View, Model){
+], function(_, Backbone, Chat, LoginView, UserModel){
     'use strict';
 
     var _LoginController = Backbone.Marionette.Controller.extend({
         LoginView: function(){
-            var model = new Model({});
-            return new View({ model: model });
+            var user = new UserModel({});
+            return new LoginView({ model: user });
         }
     });
 

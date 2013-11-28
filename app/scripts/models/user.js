@@ -4,6 +4,15 @@ define([
     'use strict';
 
     return Backbone.Model.extend({
-        default: { name: '' }
+        defaults: { name: '' },
+        validate: function(attrs, options){
+           var error = {};
+
+            if(this.username === ''){
+                error.username = 'Please enter a username';
+            }
+
+            return error;
+        }
     });
 });

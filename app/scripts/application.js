@@ -1,7 +1,7 @@
 define([
     'backbone',
     'events'
-], function( Backbone, Events, LoginView, UserModel ) {
+], function( Backbone, Events ) {
     'use strict';
 
     var Chat = new Backbone.Marionette.Application();
