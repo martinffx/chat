@@ -8,8 +8,8 @@ define([
         validate: function(attrs, options){
            var error = {};
 
-            if(this.username === ''){
-                error.username = 'Please enter a username';
+            if(attrs.name === ''){
+                error.name = 'Please enter a username';
             }
 
             return error;
